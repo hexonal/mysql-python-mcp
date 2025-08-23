@@ -3,6 +3,8 @@ import re
 import asyncio
 import aiomysql
 import json
+import sqlparse
+from sqlparse import sql, tokens as T
 from typing import List, Dict, Any, Optional
 import logging
 
@@ -63,39 +65,122 @@ class MySQLHandler:
             raise Exception(f"无法连接到数据库: {str(e)}")
     
     def is_query_safe(self, query: str) -> tuple[bool, str]:
-        """检查查询是否安全"""
+        """使用AST语法树检查查询是否安全"""
         # 如果允许危险操作，直接返回安全
         if self.allow_dangerous_operations:
             return True, ""
         
-        # 清理查询语句（移除注释和多余空格）
-        cleaned_query = re.sub(r'/\*.*?\*/', '', query, flags=re.DOTALL)  # 移除注释
-        cleaned_query = re.sub(r'--.*?$', '', cleaned_query, flags=re.MULTILINE)  # 移除行注释
-        cleaned_query = re.sub(r'\s+', ' ', cleaned_query.strip())  # 规范化空格
-        query_upper = cleaned_query.upper()
-        
-        # 检查查询是否以安全的关键词开头
-        safe_start_keywords = ['SELECT', 'SHOW', 'DESCRIBE', 'EXPLAIN', 'DESC']
-        
-        # 获取第一个词（即SQL命令）
-        first_word = query_upper.split()[0] if query_upper.split() else ""
-        
-        if first_word not in safe_start_keywords:
-            return False, f"不允许的SQL命令: {first_word}。仅允许SELECT、SHOW、DESCRIBE、EXPLAIN查询，除非在环境变量中启用危险操作。"
-        
-        # 对于SELECT查询，进行额外的安全检查，防止子查询中的危险操作
-        if first_word == 'SELECT':
-            # 检查是否包含危险的SQL函数或语句
-            dangerous_patterns = [
-                r'\bINTO\s+OUTFILE\b',      # SELECT INTO OUTFILE
-                r'\bINTO\s+DUMPFILE\b',     # SELECT INTO DUMPFILE  
-                r'\bLOAD_FILE\s*\(',        # LOAD_FILE函数
-                r'\bUNION\s+.*\b(?:INSERT|UPDATE|DELETE|DROP|ALTER|CREATE)\b', # UNION注入
-            ]
+        try:
+            # 解析SQL为AST
+            parsed = sqlparse.parse(query)
             
-            for pattern in dangerous_patterns:
-                if re.search(pattern, query_upper, re.IGNORECASE):
-                    return False, f"检测到潜在危险的SQL模式，查询被拒绝。"
+            if not parsed:
+                return False, "无法解析SQL查询"
+            
+            # 检查每个SQL语句
+            for statement in parsed:
+                is_safe, error_msg = self._check_statement_safety(statement)
+                if not is_safe:
+                    return False, error_msg
+            
+            return True, ""
+            
+        except Exception as e:
+            # 如果解析失败，出于安全考虑拒绝查询
+            return False, f"SQL解析失败，查询被拒绝: {str(e)}"
+    
+    def _check_statement_safety(self, statement: sql.Statement) -> tuple[bool, str]:
+        """检查单个SQL语句的安全性"""
+        # 获取语句类型（第一个非空白token）
+        first_token = None
+        for token in statement.tokens:
+            if not token.is_whitespace:
+                first_token = token
+                break
+        
+        if not first_token:
+            return False, "空的SQL语句"
+        
+        # 获取SQL命令关键字
+        sql_keyword = self._extract_sql_keyword(first_token)
+        
+        # 定义允许的SQL命令
+        safe_commands = {'SELECT', 'SHOW', 'DESCRIBE', 'DESC', 'EXPLAIN'}
+        
+        if sql_keyword not in safe_commands:
+            return False, f"不允许的SQL命令: {sql_keyword}。仅允许SELECT、SHOW、DESCRIBE、EXPLAIN查询，除非在环境变量中启用危险操作。"
+        
+        # 对SELECT语句进行深度安全检查
+        if sql_keyword == 'SELECT':
+            return self._check_select_safety(statement)
+        
+        return True, ""
+    
+    def _extract_sql_keyword(self, token) -> str:
+        """提取SQL关键字"""
+        if hasattr(token, 'ttype') and token.ttype is T.Keyword.DML:
+            return token.value.upper()
+        elif hasattr(token, 'ttype') and token.ttype is T.Keyword:
+            return token.value.upper()
+        elif hasattr(token, 'tokens'):
+            # 如果是复合token，递归查找关键字
+            for sub_token in token.tokens:
+                if not sub_token.is_whitespace:
+                    return self._extract_sql_keyword(sub_token)
+        
+        # 兜底：直接取token值
+        return str(token).upper().strip()
+    
+    def _check_select_safety(self, statement: sql.Statement) -> tuple[bool, str]:
+        """检查SELECT语句的安全性"""
+        statement_str = str(statement).upper()
+        
+        # 检查危险的SELECT操作
+        dangerous_constructs = [
+            ('INTO OUTFILE', 'SELECT INTO OUTFILE'),
+            ('INTO DUMPFILE', 'SELECT INTO DUMPFILE'),
+            ('LOAD_FILE(', '文件读取函数LOAD_FILE'),
+            ('@@', '系统变量访问'),
+        ]
+        
+        for construct, description in dangerous_constructs:
+            if construct in statement_str:
+                return False, f"检测到危险的{description}操作，查询被拒绝"
+        
+        # 检查UNION操作（可能用于注入）
+        if 'UNION' in statement_str:
+            # 检查UNION后是否有其他表（可能是注入尝试）
+            # 这里采用保守策略：所有跨表UNION都被视为潜在危险
+            return False, "检测到UNION操作，可能存在安全风险，查询被拒绝"
+        
+        # 使用AST检查嵌套的危险操作
+        return self._check_nested_dangerous_operations(statement)
+    
+    def _check_nested_dangerous_operations(self, statement: sql.Statement) -> tuple[bool, str]:
+        """递归检查嵌套的危险操作，如UNION注入"""
+        def check_token_recursively(token):
+            # 检查当前token
+            if hasattr(token, 'ttype'):
+                if token.ttype is T.Keyword.DML:
+                    keyword = token.value.upper()
+                    dangerous_dml = {'INSERT', 'UPDATE', 'DELETE', 'DROP', 'ALTER', 'CREATE', 'TRUNCATE'}
+                    if keyword in dangerous_dml:
+                        return False, f"在SELECT语句中检测到危险的{keyword}操作"
+            
+            # 递归检查子token
+            if hasattr(token, 'tokens'):
+                for sub_token in token.tokens:
+                    is_safe, error_msg = check_token_recursively(sub_token)
+                    if not is_safe:
+                        return False, error_msg
+            
+            return True, ""
+        
+        # 检查语句中的所有token
+        for token in statement.tokens:
+            is_safe, error_msg = check_token_recursively(token)
+            if not is_safe:
+                return False, error_msg
         
         return True, ""
     
