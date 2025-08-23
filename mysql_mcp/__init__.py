@@ -104,8 +104,11 @@ async def main():
             write_stream,
             InitializationOptions(
                 server_name="mysql-python-mcp",
-                server_version="0.1.6",
-                capabilities=app.get_capabilities(),
+                server_version="0.1.7",
+                capabilities=app.get_capabilities(
+                    notification_options=None,
+                    experimental_capabilities={},
+                ),
             ),
         )
 
