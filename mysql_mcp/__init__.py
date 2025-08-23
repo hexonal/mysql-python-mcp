@@ -112,5 +112,4 @@ async def main():
             ),
         )
 
-if __name__ == "__main__":
-    asyncio.run(main())
+# 由 __main__.py 处理启动逻辑
