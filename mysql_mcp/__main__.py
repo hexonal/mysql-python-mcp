@@ -2,14 +2,17 @@
 """MySQL MCP Server 主入口点"""
 
 import sys
-import asyncio
-from . import main as async_main
+import os
 
 def main():
-    """同步主入口函数"""
+    """主入口函数"""
     try:
-        print("Starting MySQL MCP Server...", file=sys.stderr)
-        asyncio.run(async_main())
+        print("Starting MySQL FastMCP Server...", file=sys.stderr)
+        
+        # 导入并运行FastMCP应用
+        from . import mcp
+        mcp.run()
+        
     except KeyboardInterrupt:
         print("服务器已停止", file=sys.stderr)
         sys.exit(0)

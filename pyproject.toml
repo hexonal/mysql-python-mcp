@@ -1,6 +1,6 @@
 [project]
 name = "mysql-python-mcp"
-version = "0.1.7"
+version = "1.0.0"
 description = "A MySQL MCP server for safe database operations"
 authors = [
     { name = "MySQL MCP", email = "w741069229@gmail.com" }
@@ -22,9 +22,8 @@ classifiers = [
 ]
 
 dependencies = [
-    "mcp>=1.0.0",
+    "fastmcp>=2.0.0",
     "aiomysql>=0.2.0",
-    "asyncio-mqtt>=0.13.0",
 ]
 
 [project.optional-dependencies]
