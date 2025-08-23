@@ -59,9 +59,18 @@ async def test_mcp_stdio():
         
         # 检查stderr输出
         try:
-            stderr_data = await asyncio.wait_for(process.stderr.read(1024), timeout=2.0)
+            stderr_data = await asyncio.wait_for(process.stderr.read(4096), timeout=3.0)
             if stderr_data:
-                print(f"   stderr: {stderr_data.decode('utf-8', errors='ignore')}")
+                stderr_text = stderr_data.decode('utf-8', errors='ignore')
+                print(f"   stderr: {stderr_text}")
+                
+                # 读取更多stderr输出
+                try:
+                    more_stderr = await asyncio.wait_for(process.stderr.read(2048), timeout=1.0)
+                    if more_stderr:
+                        print(f"   stderr(续): {more_stderr.decode('utf-8', errors='ignore')}")
+                except asyncio.TimeoutError:
+                    pass
         except asyncio.TimeoutError:
             print("   stderr: (无输出)")
         
