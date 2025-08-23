@@ -64,24 +64,38 @@ class MySQLHandler:
     
     def is_query_safe(self, query: str) -> tuple[bool, str]:
         """检查查询是否安全"""
-        query_upper = query.strip().upper()
-        
         # 如果允许危险操作，直接返回安全
         if self.allow_dangerous_operations:
             return True, ""
         
-        # 检查是否包含危险关键词
-        for keyword in self.dangerous_keywords:
-            if keyword in query_upper:
-                return False, f"检测到危险操作关键词: {keyword}。仅允许SELECT查询，除非在环境变量中启用危险操作。"
-        
-        # 检查是否以SELECT开头（忽略注释和空格）
+        # 清理查询语句（移除注释和多余空格）
         cleaned_query = re.sub(r'/\*.*?\*/', '', query, flags=re.DOTALL)  # 移除注释
         cleaned_query = re.sub(r'--.*?$', '', cleaned_query, flags=re.MULTILINE)  # 移除行注释
-        cleaned_query = cleaned_query.strip()
+        cleaned_query = re.sub(r'\s+', ' ', cleaned_query.strip())  # 规范化空格
+        query_upper = cleaned_query.upper()
         
-        if not cleaned_query.upper().startswith('SELECT') and not cleaned_query.upper().startswith('SHOW') and not cleaned_query.upper().startswith('DESCRIBE') and not cleaned_query.upper().startswith('EXPLAIN'):
-            return False, "仅允许SELECT、SHOW、DESCRIBE、EXPLAIN查询，除非在环境变量中启用危险操作。"
+        # 检查查询是否以安全的关键词开头
+        safe_start_keywords = ['SELECT', 'SHOW', 'DESCRIBE', 'EXPLAIN', 'DESC']
+        
+        # 获取第一个词（即SQL命令）
+        first_word = query_upper.split()[0] if query_upper.split() else ""
+        
+        if first_word not in safe_start_keywords:
+            return False, f"不允许的SQL命令: {first_word}。仅允许SELECT、SHOW、DESCRIBE、EXPLAIN查询，除非在环境变量中启用危险操作。"
+        
+        # 对于SELECT查询，进行额外的安全检查，防止子查询中的危险操作
+        if first_word == 'SELECT':
+            # 检查是否包含危险的SQL函数或语句
+            dangerous_patterns = [
+                r'\bINTO\s+OUTFILE\b',      # SELECT INTO OUTFILE
+                r'\bINTO\s+DUMPFILE\b',     # SELECT INTO DUMPFILE  
+                r'\bLOAD_FILE\s*\(',        # LOAD_FILE函数
+                r'\bUNION\s+.*\b(?:INSERT|UPDATE|DELETE|DROP|ALTER|CREATE)\b', # UNION注入
+            ]
+            
+            for pattern in dangerous_patterns:
+                if re.search(pattern, query_upper, re.IGNORECASE):
+                    return False, f"检测到潜在危险的SQL模式，查询被拒绝。"
         
         return True, ""
     
