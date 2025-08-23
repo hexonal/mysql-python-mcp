@@ -1,6 +1,6 @@
 [project]
 name = "mysql-python-mcp"
-version = "0.1.3"
+version = "0.1.4"
 description = "A MySQL MCP server for safe database operations"
 authors = [
     { name = "MySQL MCP", email = "w741069229@gmail.com" }
