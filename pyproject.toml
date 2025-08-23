@@ -37,7 +37,7 @@ dev = [
 ]
 
 [project.scripts]
-mysql-python-mcp = "mysql_mcp:main"
+mysql-python-mcp = "mysql_mcp.__main__:main"
 
 [build-system]
 requires = ["hatchling"]

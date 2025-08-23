@@ -1,0 +1,505 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list />
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyStubPackagesAdvertiser" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="pyspark-stubs==3.0.0.post3" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="scwbasic-protection-set_CryptoCipherInsecureAsymmetricCryptographicAlgorithm" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_CryptoKeyAgreementGuideonApprovedCryptographicAlgorithm" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_CryptoKeyAgreementInsecureCryptographicAlgorithm" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_CryptoKeyPairGenerationApprovedStandardCryptographicAlgorithm" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_CryptoKeyPairGenerationInsecureCryptographicAlgorithm" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_CryptoKeyPairGenerationNonStandardCryptographicAlgorithm" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_CryptoSignatureApprovedHashingAlgorithm" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_CryptoSignatureInsecureHashingAlgorithm" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_CryptoSignatureNonStandardHashingAlgorithm" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_DataProtection-CryptographyAvoidbruteforcingUsesufficientlylongkeysizeskeyGenerator" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_DataProtection-CryptographyAvoidcryptographicweaknessUseappropriatekeypairgenerationalgorithminsecure" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_DataProtection-CryptographyAvoidcryptographicweaknessUseappropriatekeypairgenerationalgorithmnotrecommended" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_DataProtection-CryptographyAvoidcryptographicweaknessUseappropriatesecretkeygenerationalgorithmDESfamily" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_DataProtection-CryptographyAvoidcryptographicweaknessUseappropriatesecretkeygenerationalgorithmHmacfamily" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_DataProtection-CryptographyAvoidcryptographicweaknessUseappropriatesecretkeygenerationalgorithmOtheralgorithms" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_DataProtection-CryptographyAvoidcryptographicweaknessUseappropriatesecretkeygenerationalgorithminsecureSecretKeyFactory" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_DataProtection-CryptographyAvoidcryptographicweaknessUseappropriatesecretkeygenerationalgorithmotherSecretKeyFactory" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_DataProtection-CryptographyAvoidcryptographicweaknessUsestrongsymmetriccryptographicalgorithm" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_DataProtection-CryptographyAvoidcryptographicweaknessUsestrongsymmetriccryptographicalgorithmUntrusted" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_DataProtection-CryptographyAvoidcryptographicweaknessUsesufficientlylongkeysizeskeyGeneratorbadvalue" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_DataProtection-CryptographyAvoidcryptographicweaknessUsesufficientlylongkeysizeskeyPairGenerator" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_DataProtection-CryptographyAvoidcryptographicweaknessUsesufficientlylongkeysizeskeyPairGeneratorbadvalue" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_DataProtection-SecureDataStorageAvoiddataexposureUseCipherinsteadofNullCipher" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_InjectionAvoidCodeInjectionUseSafeConstructor1stargumentoftypeConstructor" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_InjectionAvoidCodeInjectionUseSafeConstructorargumentsbutnoConstructorargument" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_InjectionAvoidCodeInjectionUseSafeConstructornoarguments" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_InjectionAvoidSQLInjectionUseParameterizedQueriesPreparedStatement" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_InjectionAvoidSQLInjectionUseParameterizedQueriesStatement" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_XMLInjectionSetmissingsecureprocessingfeature" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_XMLInjectionSetsecureprocessingfeaturetotrue" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_XXEDocumentBuilderFactoryAddmissingfeaturedissallow-doctype-decl" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_XXEDocumentBuilderFactoryAddmissingfeatureexternal-parameter-entities" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_XXEDocumentBuilderFactoryAddmissingfeatureload-external-dtd" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_XXEDocumentBuilderFactoryAddmissingfeaturesetExpandEntityReferences" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_XXEDocumentBuilderFactoryAddmissingfeaturesetXIncludeAware" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_XXEDocumentBuilderFactorySetfeaturestofalse" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_XXEDocumentBuilderFactorySetfeaturestotrue" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_XXEDocumentBuilderFactorySetterstofalse" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_XXEXMLInputFactoryAddIS_SUPPORTING_EXTERNAL_ENTITIESfeature" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_XXEXMLInputFactoryAddSUPPORT_DTDfeature" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_XXEXMLInputFactorySetfeaturestofalse" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ArgumentneedstobemigratedfromDateTimeFieldTypetoTemporalField" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ArgumentneedstobemigratedfromDateTimeFieldTypetoTemporalField-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ArgumentneedstobemigratedfromDateTimeFieldTypetojava.time.TemporalField" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ArgumentneedstobemigratedfromDateTimeParsertojava.time.format.DateTimeFormatter" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_Argumentneedstobemigratedtojava.time.format.DateTimeFormatter" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_CenturyofEraisnotsupportedinjava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConstructorargumentObjectneedstobemigratedtojava.timebeforeConstructorMigrationcanoccur" enabled="true" level="SENSEI INFO" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConstructorargumentObjectneedstobemigratedtojava.timebeforeConstructorMigrationcanoccur-1" enabled="true" level="SENSEI INFO" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConstructorargumentReadableInstantneedstobemigratedtojava.timebeforeConstructorMigrationcanoccur" enabled="true" level="SENSEI INFO" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertDateTimeFormatterBuildertojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertDateTimeFormatterwithZoneUTCtojava.timeequivalent" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertDateTimeZone.UTCtojava.time.ZoneOffset.UTC" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertDateTimeZone.forOffsetHourstojava.time.ZoneOffset" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertDateTimeZone.forOffsetMillistojava.time.ZoneOffset" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertDateTimeZone.forTimeZonetoZoneId.forID" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertDateTimeZone.getAvailableIdstojava.timeequivalent" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertDateTimeZone.getNametojava.timeequivalent" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertDateTimeZone.getNametojava.timeequivalent-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertDateTimeZone.getShortNametojava.timeequivalent" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertDateTimeZone.getShortNametojava.timeequivalent-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertDateTimeZoneforOffsetHoursMinutestojava.time.ZoneOffset" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertDateTimeZonegetDefault" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertDateTimeZonetoZoneId" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertDateTimeZonetoZoneId-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertJoda-TimeDateTimeFormat.forPatterntojava.time.format.DateTimeFormatter.ofPattern" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertJoda-TimeDateTimeFormat.fullDate" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertJoda-TimeDateTimeFormat.fullDateTime" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertJoda-TimeDateTimeFormat.fullTime" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertJoda-TimeDateTimeFormat.longDate" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertJoda-TimeDateTimeFormat.longDateTime" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertJoda-TimeDateTimeFormat.longTime" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertJoda-TimeDateTimeFormat.mediumDate" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertJoda-TimeDateTimeFormat.mediumDateTime" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertJoda-TimeDateTimeFormat.mediumTime" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertJoda-TimeDateTimeFormat.shortDate" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertJoda-TimeDateTimeFormat.shortDateTime" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertJoda-TimeDateTimeFormat.shortTime" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertLocalDateTimegetTimeInMillistoInstanttoEpochMilli" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertLocalDateTimegetTimetojava.timeEquivalent" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertLocalDategetTimetojava.timeEquivalent" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertReturntypetojava.time.DateTimeFormatter" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertappendDecimaltoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertappendSignedDecimaltoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertappendSomethingShortTexttoappendTextChronoField.SOMETHINGTextStyle.SHORT" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertappendSomethingTexttoappendTextChronoField.SOMETHING" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_Convertfieldtojava.time.DateTimeFormatter" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertgetTimeInMillistoInstanttoEpochMilli" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertgetTimetojava.timeEquivalent" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertparseDateTimetojava.timeversion" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertparseLocalDateTimetojava.timeversion" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertparseLocalDatetojava.timeversion" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertparseLocalTimetojava.timeversion" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertparseMillistojava.timeversion" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertparseMutableDateTimetojava.time" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertprintLongtoformat" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertprintToappendablelongtoformatTemporalAccessorAppendable" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConvertprintTotoformatTo" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_Convertprinttoformat" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ConverttoTimeZonetoTimeZone.getTimeZoneZoneId" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_DateTimeFormatterBuilderJoda-Timemethodisobsoleteinjava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_DateTimeFormatterBuilderJoda-TimetoParsertoPrinterisobsoleteinjava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_DateTimeFormatterdeprecatedgetChronolgy" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_DateTimeFormatterhasnoequivalentmethodinjava.time" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_DateTimetoStringformathaschangedfromJoda-Timetojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateCalendargetDayofMonth" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateCalendargetDayofWeek" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateCalendargetDayofYear" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateCalendargetHour" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateCalendargetHourofDay" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateCalendargetMinute" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateCalendargetMonth" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateCalendargetSecond" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateCalendargetYear" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateCalendarsetTimeInMillistojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateCalendarsettojava.timewith-Days" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateCalendarsettojava.timewith-Hours" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateCalendarsettojava.timewith-Hoursofday" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateCalendarsettojava.timewith-Millisecond" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateCalendarsettojava.timewith-Minutes" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateCalendarsettojava.timewith-Months" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateCalendarsettojava.timewith-Seconds" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateCalendarsettojava.timewith-Years" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateDateTimeZoneparametertojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateDateTimeZonereturntypetojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateDateTimeparametertojava.time.ZonedDateTimeorjava.time.OffsetDateTime" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateDateaftertoisAfter" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateDatebeforetoisBefore" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateDatefieldtojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateDatemethodsparameterstojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateGregorianCalendaryearmonthdayhourminutesecondtojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateGregorianCalendaryearmonthdayhourminutetojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateGregorianCalendaryearmonthdaytojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigrateSimpleDateFormattojava.timeDateTimeFormatter" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_Migrateaddmethodtojava.timeplusmethod-Days" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_Migrateaddmethodtojava.timeplusmethod-Hours" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_Migrateaddmethodtojava.timeplusmethod-Millis" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_Migrateaddmethodtojava.timeplusmethod-Minutes" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_Migrateaddmethodtojava.timeplusmethod-Months" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_Migrateaddmethodtojava.timeplusmethod-Seconds" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_Migrateaddmethodtojava.timeplusmethod-Weeks" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_Migrateaddmethodtojava.timeplusmethod-Years" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_Migratemethodparameterstypetojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewDateTimeCalendarDateTimeZonetojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewDateTimeCalendartojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewDateTimeDateDateTimeZonetojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewDateTimeDateTimeZonetojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewDateTimeDatetojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewDateTimejava.time.InstantDateTimeZonetojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewDateTimejava.time.Instanttojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewDateTimejava.time.TemporalAccessorDateTimeZonetojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewDateTimejava.time.TemporalAccessortojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewDateTimelongDateTimeZonetojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewDateTimelongtojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewDateTimetojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewDateTimeyearmonthdayhourminuteDateTimeZonetojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewDateTimeyearmonthdayhourminutesecondDateTimeZonetojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewDateTimeyearmonthdayhourminutesecondmillisDateTimeZonetojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewDateTimeyearmonthdayhourminutesecondmillistojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewDateTimeyearmonthdayhourminutesecondtojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewDateTimeyearmonthdayhourminutetojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewGregorianCalendarLocaletojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewGregorianCalendarTimezoneLocaletojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewGregorianCalendarTimezonetojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewGregorianCalendartojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewInstanceCalendartojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_MigratenewInstanceCalendartojava.timewithZoneId" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_Migratereturntypetojava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_Migratereturntypetojava.time-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RemoveobsoletetoDateTimemethodcall" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RemoveobsoletewithOffsetParsedMethodCall" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ReplacenewDateLongwithjava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_ReplacenewDatewithjava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteDateTimepluslongtojava.timeequivalent" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteDateTimewithZoneRetainFieldstojava.timeequivalent" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteDateTimewithZonetojava.timeequivalent" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendClockhourOfDaytoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendClockhourOfHalfdaytoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendDayOfMonthtoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendDayOfWeektoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendDayOfYeartoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendFixedDecimaltoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendFixedSignedDecimaltoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendFractionOfDaytoappendFraction" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendFractionOfHourtoappendFraction" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendFractionOfMinutetoappendFraction" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendFractionOfSecondtoappendFraction" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendHourOfDaytoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendHourOfHalfdaytoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendMillisOfDaytoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendMillisOfSecondtoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendMinuteOfDaytoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendMinuteOfHourtoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendMonthOfYeartoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendSecondOfDaytoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendSecondOfMinutetoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendTimeZoneNametoappendZoneText" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendTimeZoneNametoappendZoneText-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendTimeZoneShortNametoappendZoneText" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendTimeZoneShortNametoappendZoneText-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendWeekOfWeekyeartoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendWeekyeartoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendYearOfCenturytoappendPattern" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendYearOfEratoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteappendYeartoappendValue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_Rewriteclearusingre-instantiation" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewritegetCenturyOfEratojava.timeequivalent" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewritegetDateTimeFieldmethodtogetChronoField.DATE_TIME_FIELD" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewritegetHourOfDaytogetHour" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewritegetMillisto.toInstant.toEpochMilli" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewritegetMinuteOfHourtogetMinute" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewritegetSecondOfMinutetogetSecond" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewritegetWeekOfWeekyeartojava.timeequivalent" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewritegetWeekyeartojava.timeequivalent" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewritegetYearOfCenturytojava.timeequivalent" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteisAfterNowtojava.timeequivalent" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewriteisBeforeNowtojava.timeequivalent" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_Rewriteminuslongmethodcalltojava.timeequivalent" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewritetoDateMidnighttojava.timeequivalent" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewritetoDateTimeDateTimeZonetojava.timeequivalent" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewritetoDatetojava.timeequivalent" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewritetoGregorianCalendartoGregorianCalendar.fromZonedDateTime" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewritetoTimeOfDaytotoLocalTime" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_RewritetoYearMonthDaytotoLocalDate" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_SecondargumentshouldbeaSetZoneIdinsteadofMapStringorg.joda.time.DateTimeZone" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_TimeZonetoZoneId" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_TimeZonetoZoneIddefault" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_appendShortTextisdifferentinjava.time" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_appendTimeZoneIdisnowappendZoneId" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava-time_appendTimeZoneOffsetisnowappendOffsetId" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava_CollectionsDonotexposeinternalLists" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwjava_CollectionsDonotexposeinternalSets" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwjava_CommandInjectionUntrusteddatainProcessBuildercommand" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwjava_CommandInjectionUntrusteddatainProcessBuildercommand-Add" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwjava_Createprivateconstructorforutilityclassallfieldsmethodsarestatic" enabled="true" level="SENSEI INFO" enabled_by_default="true" />
+    <inspection_tool class="scwjava_Donotcompareclassestypesbytheirname" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava_Donotcompareclassestypesbytheirnameliteral" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava_Donotcompareclassestypesbytheirnameliteralinverted" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava_Donotexposeinternalarray" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava_ExceptionCreatedbutnotthrown" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava_Incorrectequalitycheckofwrappervaluesequals" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwjava_Incorrectequalitycheckofwrappervaluesnotequals" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwjava_IncorrectuseofObjects.equals" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava_InefficientuseofString.indexOf" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava_InvalidcomparisonofStringtonumberprimitive" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwjava_InvalidcomparisonofStringtonumberwrapper" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwjava_PortabilityFlawAvoidlocaledependentcomparisonsequalsaftercaseconversion" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava_RegexInjection" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwjava_String.formatreturnvaluebeingignored" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava_StringsRegexUseEscapeRegexSpecialCharacterforAnyCharMatching" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwjava_URLClassloaderCallsuperwhenoverridinggetPermissions" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwjava_ValidateZipEntries" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_PreventCRLFinjectioninSLF4J" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_PreventCRLFinjectioninSLF4JusingtheLogstashLogbackEncoder" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingLoggermodifiers" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingNamingconventionReservedloggername" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingNamingconventionStandardiseloggername" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingPrintExceptionsusingSLF4Jinstead" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingReplacejava.util.loggingwithSLF4JDebug" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingReplacejava.util.loggingwithSLF4JError" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingReplacejava.util.loggingwithSLF4JInfo" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingReplacejava.util.loggingwithSLF4JLogDebug" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingReplacejava.util.loggingwithSLF4JLogError" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingReplacejava.util.loggingwithSLF4JLogExceptionDebug" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingReplacejava.util.loggingwithSLF4JLogExceptionError" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingReplacejava.util.loggingwithSLF4JLogExceptionInfo" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingReplacejava.util.loggingwithSLF4JLogExceptionTrace" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingReplacejava.util.loggingwithSLF4JLogExceptionWarning" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingReplacejava.util.loggingwithSLF4JLogInfo" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingReplacejava.util.loggingwithSLF4JLogObjectDebug" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingReplacejava.util.loggingwithSLF4JLogObjectError" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingReplacejava.util.loggingwithSLF4JLogObjectInfo" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingReplacejava.util.loggingwithSLF4JLogObjectTrace" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingReplacejava.util.loggingwithSLF4JLogObjectWarning" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingReplacejava.util.loggingwithSLF4JLogTrace" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingReplacejava.util.loggingwithSLF4JLogWarning" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingReplacejava.util.loggingwithSLF4JTrace" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingReplacejava.util.loggingwithSLF4JWarning" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingSystem.err" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwloggingslf4j_SLF4JLoggingSystem.out" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_AuthenticationUsernameEnumerationavoidUsernameNotFoundException" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_AuthenticationUsernameEnumerationsetHideUserNotFoundExceptionsshouldbesettotrue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_CSRFDisabledCSRFprotectionAbstractHttpConfigurer" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_CSRFDisabledCSRFprotectionHttpSecurity" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_DataInjectionParameterizeLDAPFiltersDirContextsearch" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_EmailDisabledSSLServerIdentitycheck" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_EmailDisabledSSLonConnect" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_HibernateMissingtransport-levelsecurityNoSSLfordatabaseconnection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_Injection-SQLInjectioninJPAEntityManagercreateNativeQuery" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_Injection-SQLInjectioninJPAEntityManagercreateQuery" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_InjectionXXEJaxb2MarshallersetProcessExternalEntitiessettotrue" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_InjectionXXEJaxb2MarshallersetSupportDtdsettotrue" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_InjectionXXEJaxb2RootElementHttpMessageConvertersetProcessExternalEntitiessettotrue" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_InjectionXXEJaxb2RootElementHttpMessageConvertersetSupportDtdsettotrue" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_InjectionXXESourceHttpMessageConvertersetProcessExternalEntitiessettotrue" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_InjectionXXESourceHttpMessageConvertersetSupportDtdsettotrue" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_InputValidationAvoidExpressionLanguageInjectionDonotevaluateexpressionscontrolledbyuserinputjavax" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_InputValidationAvoidJDBCInjectionBindvariablesinpreparedstatementsTwoparameters" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_InputValidationAvoidJDBCInjectionBindvariablesinpreparedstatementssingleparameter" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_InputValidationAvoidSpringExpressionLanguageInjectionDonotevaluateexpressionscontrolledbyuserinputExpressionParser" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_InputValidationAvoidXXEUseautomaticallyprotectedsourcetypes" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_MongoDB_idNoSQLInjection" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SLF4JLoggingenforceusageofplaceholdersinthemessages" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SQLInjectionSQLiteDatabaseexecSQL" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SQLInjectionSQLiteDatabasequery-1stparameter" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SQLInjectionSQLiteDatabasequery-2ndparameter" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SQLInjectionSQLiteDatabasequery-3rdparameter" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SQLInjectionSQLiteDatabasequery-5thparameter" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SQLInjectionSQLiteQueryBuilderappendWhere" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SQLInjectionSQLiteQueryBuilderbuildQuery" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SQLInjectionSQLiteQueryBuildercompileStatement" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SQLInjectionSQLiteQueryBuildercompileStatementCompliant" enabled="true" level="SENSEI COMPLIANT" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SecureTransportuseRequiresSecuretoenforceHTTPS" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SecureTransportuseRequiresSecuretoenforceHTTPSonallpaths" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SecurityMisconfigurationClickjackingprotectionDisabledHeader-frameOptions" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SecurityMisconfigurationContentsniffingprotection" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SecurityMisconfigurationDisableSecurityFeatures-HSTS" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SecurityMisconfigurationDisabledHeaders" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SecurityMisconfigurationDisabledSecuritySettingsCookieCsrfTokenRepositorywithHttpOnlyFalse" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SecurityMisconfigurationEnableWebSecuritywithDebugenabled" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SecurityMisconfigurationHSTS-includeSubDomains" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SecurityMisconfigurationXSSprotectionAddCSPheader-XXssConfig" enabled="true" level="SENSEI INFO" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SecurityMisconfigurationXSSprotectionAddCSPheader-xssProtection" enabled="true" level="SENSEI INFO" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SecurityMisconfigurationXSSprotectionDisabledHeader-block" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SecurityMisconfigurationXSSprotectionDisabledHeader-disable" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SecurityMisconfigurationXSSprotectionDisabledHeader-xssProtectionEnabled" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SessionconfigurationCookieConfigureHttpOnlyflag" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SessionconfigurationCookiesConfigureHttpOnlyflag" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SessionconfigurationCookiesConfigureHttpOnlyflag-1" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SessionconfigurationCookiesConfigureSecureflag" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SessionconfigurationCookiesConfigureSecureflag-1" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SessionconfigurationCookiesConfigureSecureflag-2" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SessionconfigurationCookiesConfigureSecureflag-3" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SessionconfigurationCookiesSetHttpOnlyflagtotrue" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SessionconfigurationCookiesSetHttpOnlyflagtotrue-1" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SessionconfigurationCookiesSetHttpOnlyflagtotrue-2" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SessionconfigurationCookiesSetHttpOnlyflagtotrue-3" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SessionconfigurationCookiesSetSecureflagtotrue" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SessionconfigurationCookiesSetSecureflagtotrue-1" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SessionconfigurationCookiesSetSecureflagtotrue-2" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SessionconfigurationCookiesSetSecureflagtotrue-3" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SessionconfigurationHttpCookieConfigureHttpOnlyflag" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_ShoulduserequiresSecure" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_SpringDataNeo4jClientqueryisvulnerabletoinjections" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_TLSDisabledCertificatevalidation" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_TLSWeakEncryptionInsecureVersion" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_TLSWeakEncryptionOutdatedVersion" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_Untrustedinputinlogging" enabled="true" level="SENSEI INFO" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_VulnerableLog4jversion-Log4ShellCVE-2021-44228" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwowasp-top-10_X509DisabledvalidationinTrustManager" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_AccessControlMvcRequestMatcherismoresecurethanAntPathRequestMatcherforSpringMVCpatterns" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_Avoidhardcodedsecretswhenusingpasswordencoders" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwspring_AvoidhardcodedsecretswhenusingtheEncryptorsclass" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwspring_AvoidmappingtomultipleHTTPrequestmethods" enabled="true" level="SENSEI INFO" enabled_by_default="true" />
+    <inspection_tool class="scwspring_CodequalityDonotaddScopesingletononaSpringrestcontrollerserviceorrepository" enabled="true" level="SENSEI INFO" enabled_by_default="true" />
+    <inspection_tool class="scwspring_DataProtectionSecureDataStorageAvoidDataExposureDonotuseNoOpPasswordEncoder" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwspring_DataProtectionSecureDataStorageAvoidDataExposureHashpasswordsusingstronghashingalgorithms" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwspring_DataProtectionSecureDataStorageAvoidDataExposureHashpasswordsusingstronghashingalgorithms-1" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwspring_Encryptorsrequirestheuseofarandom8-bytesalt" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwspring_EnvironmentTestUtilsisdeprecated" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_Fieldinjectionisnotrecommended" enabled="true" level="SENSEI INFO" enabled_by_default="true" />
+    <inspection_tool class="scwspring_Fieldinjectionisnotrecommendedlombok" enabled="true" level="SENSEI INFO" enabled_by_default="true" />
+    <inspection_tool class="scwspring_Missingannotationincontrollerclass" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwspring_Missingannotationinupdatequery" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwspring_Non-annotatedcontrollerpublicmethod" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_ProtectagainstSessionFixationattacks" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_RestTemplateBuilderrequestFactoryClientHttpRequestFactoryisdeprecated" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationCORSAvoidbroadsettingsCorsRegistryallowCredentials" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationCORSAvoidbroadsettingsCorsRegistryallowedHeaders" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationCORSAvoidbroadsettingsCorsRegistryallowedMethods" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationCORSAvoidbroadsettingsCorsRegistryallowedOrigins" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationCORSAvoidbroadsettingsCorsRegistryexposedHeaders" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationCORSAvoidbroadsettingsCorsRegistrymaxAge" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationCORSAvoidbroadsettingsCrossOrigin" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationCORSAvoidbroadsettingsCrossOrigin-allowCredentials" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationCORSAvoidbroadsettingsCrossOrigin-allowedHeaders" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationCORSAvoidbroadsettingsCrossOrigin-exposedHeaders" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationCORSAvoidbroadsettingsCrossOrigin-maxAge" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationCORSAvoidbroadsettingsCrossOrigin-methods" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationCORSAvoidbroadsettingsCrossOrigin-origins" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationPreventsessionfrombeingincludedintheURL" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationStrictHttpFirewallAvoidDefaultHttpFirewallinstancecreation" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationStrictHttpFirewallAvoidDefaultHttpFirewallmethodreturntype" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationStrictHttpFirewallRuleconfigurationHTTPmethodvalidation" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationStrictHttpFirewallRuleconfigurationRejectURLencodedbackslash" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationStrictHttpFirewallRuleconfigurationRejectURLencodeddoubleslash" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationStrictHttpFirewallRuleconfigurationRejectURLencodednull" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationStrictHttpFirewallRuleconfigurationRejectURLencodedpercent" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationStrictHttpFirewallRuleconfigurationRejectURLencodedperiod" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationStrictHttpFirewallRuleconfigurationRejectURLencodedslash" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SecurityMisconfigurationStrictHttpFirewallRuleconfigurationRejectsemicolon" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SessionConfigurationInvalidatetheHttpSessionafterlogout" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SessionmanagementAvoidCSRFUsenarrowmappingforstate-changingmethods" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SpringSecurityraceconditionSecurityContextHolder.getContext.setAuthentication" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SpringSecurityrecommendsDelegatingPasswordEncoderforbestpractices" enabled="true" level="SENSEI INFO" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SpringSecurityrecommendsDelegatingPasswordEncoderforbestpracticesBCrypt" enabled="true" level="SENSEI INFO" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SpringSecurityrecommendsDelegatingPasswordEncoderforbestpracticesBean" enabled="true" level="SENSEI INFO" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SpringSecurityrecommendsDelegatingPasswordEncoderforbestpracticesBean-BCrypt" enabled="true" level="SENSEI INFO" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SpringrecommendationRestControllerServiceRepositoryshouldbesingletons" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SuffixMatchingUseRegisteredSuffixPatternMatchsettofalsetopreventsuffixpatternmatching" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_SuffixMatchingUseSuffixPatternMatchsettofalsetopreventsuffixpatternmatching" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_Use.deluxforastrongerpassword-basedencryption" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_Use.strongerforamoresecurealternative" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwspring_Usecomposedrequestmappingannotations" enabled="true" level="SENSEI INFO" enabled_by_default="true" />
+    <inspection_tool class="scwspring_UserequestMappingonpublicmethods" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_FESTAssertionmethodremovedinAssertJ" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJThrowingCallableassertions" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJThrowingCallableassertions-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJThrowingCallableassertionsJUnitv4" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJnotthrownassertions" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJratherthanFESTassertions" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsfail" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsfail-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisEqualTo" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisEqualTo-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisEqualToinsteadofassertArrayEquals" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisEqualToinsteadofassertArrayEqualswithmessage" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisEqualTowithmessage" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisFalse" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisFalse-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisFalsewithmessage" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisNotEqualTo" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisNotNull" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisNotNull-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisNotNullwithmessage" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisNotSameAs" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisNotSameAs-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisNotSameAswithmessage" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisNull" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisNull-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisNullwithmessage" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisSameAs" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisSameAs-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisSameAswithmessage" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisTrue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisTrue-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseAssertJsisTruewithmessage" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UsecontainsinsteadofcontainsisTrue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UsehasSameSizeAsforcomparingCollectionsizes" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UsehasSameSizeAsforcomparingtoanothercollectionssize" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UsehasSizeGreaterThanOrEqualToforsizecomparisonofcollection" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UsehasSizeGreaterThanOrEqualToforsizecomparisonofcollection-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UsehasSizeGreaterThanforsizecomparisonofcollection" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UsehasSizeGreaterThanforsizecomparisonofcollection-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UsehasSizeLessThanOrEqualToforsizecomparisonofcollection" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UsehasSizeLessThanOrEqualToforsizecomparisonofcollection-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UsehasSizeLessThanforsizecomparisonofcollection" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UsehasSizeLessThanforsizecomparisonofcollection-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UsehasSizeforcheckingCollectionsize" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseisEmptyforcheckingemptyCollection" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseisEmptyforcheckingemptyCollection-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseisEmptyforcheckingforcollectionwithnoelements" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseisEmptyforcheckingforcollectionwithnoelements-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseisEqualToinsteadofequalsisTrue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseisEqualToinsteadofisTrue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseisFalseratherthanisEqualTofalse" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseisNotEmptyforcheckingforcollectionwithnoelements" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseisNotEmptyforcheckingforcollectionwithnoelements-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseisNotEmptyforcheckingforcollectionwithsomeelements" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseisNotEmptyforcheckingnon-emptyCollection" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseisNotEqualToinsteadofequalsisFalse" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseisNotEqualToinsteadofequalsisTrue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseisNotEqualToinsteadofisFalse" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseisNotEqualToinsteadofisTrue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseisNotNullratherthanisNotEqualTonull" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseisNullratherthanisEqualTonull" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingassertj_UseisTrueratherthanisEqualTotrue" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingjunit4_JUnit4IgnoredDescription" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingjunit4_JUnit4Incorrectmethodsignatureforannotation" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwtestingjunit4_JUnit4IncorrectmethodsignatureforannotationClass" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwtestingjunit4_JUnit4IncorrectmethodsignatureforannotationClass-arguments" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwtestingjunit4_JUnit4Testannotationmissing" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwtestingjunit4_JUnit4assertEqualssuspiciousorderofargumentswithmessage" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingjunit4_JUnit4assertEqualssuspiciousorderofargumentswithmessage-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingjunit4_JUnitMixeduseofJUnitversions" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingjunit4_TestframeworkEnforceRuleannotationforaJUnitSoftAssertionsfield" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwtestingjunit5_JUnit5DisabledDescription" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingjunit5_JUnit5IncorrectmethodsignatureforannotationAll" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwtestingjunit5_JUnit5IncorrectmethodsignatureforannotationEach" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwtestingjunit5_JUnit5MethodSourceProvidershouldbestatic" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwtestingjunit5_JUnit5Nestedannotationmissing" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwtestingjunit5_JUnit5Nestedannotationunnecessary" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingjunit5_JUnit5Nestedannotationunnecessary-1" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingjunit5_JUnit5Testannotationmissing" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwtestingjunit5_JUnit5Testmethodcannotbeprivate." enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingjunit5_JUnit5assertEqualssuspiciousorderofarguments" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+    <inspection_tool class="scwtestingjunit5_JUnit5assertEqualssuspiciousorderofargumentswithmessage" enabled="true" level="SENSEI WARNING" enabled_by_default="true" />
+  </profile>
+</component>

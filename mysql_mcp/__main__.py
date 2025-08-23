@@ -3,14 +3,18 @@
 
 import sys
 import asyncio
-from . import main
+from . import main as async_main
 
-if __name__ == "__main__":
+def main():
+    """同步主入口函数"""
     try:
-        asyncio.run(main())
+        asyncio.run(async_main())
     except KeyboardInterrupt:
         print("服务器已停止")
         sys.exit(0)
     except Exception as e:
         print(f"启动服务器时发生错误: {e}")
         sys.exit(1)
+
+if __name__ == "__main__":
+    main()
