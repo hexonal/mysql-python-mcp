@@ -261,20 +261,33 @@ class MySQLHandler:
                 columns = await cursor.fetchall()
                 
                 if not columns:
-                    return f"表 '{table_name}' 不存在或无权限访问"
+                    error_result = {
+                        "status": "error",
+                        "message": f"表 '{table_name}' 不存在或无权限访问"
+                    }
+                    return json.dumps(error_result, ensure_ascii=False)
                 
-                # 格式化输出
-                result = f"表 '{table_name}' 的结构:\n"
-                result += "-" * 80 + "\n"
-                result += f"{'字段名':<20} {'类型':<20} {'允许NULL':<10} {'键':<10} {'默认值':<15} {'额外':<15}\n"
-                result += "-" * 80 + "\n"
-                
+                # 构建结构化的JSON响应
+                column_info = []
                 for column in columns:
                     field, type_info, null, key, default, extra = column
-                    default_str = str(default) if default is not None else "NULL"
-                    result += f"{field:<20} {type_info:<20} {null:<10} {key:<10} {default_str:<15} {extra:<15}\n"
+                    column_info.append({
+                        "field": field,
+                        "type": type_info,
+                        "null": null,
+                        "key": key,
+                        "default": default,
+                        "extra": extra
+                    })
                 
-                return result
+                result = {
+                    "status": "success",
+                    "message": f"表 '{table_name}' 包含 {len(columns)} 个字段",
+                    "table_name": table_name,
+                    "columns": column_info
+                }
+                
+                return json.dumps(result, ensure_ascii=False)
         except Exception as e:
             self.logger.error(f"描述表结构失败: {e}")
             raise Exception(f"获取表 '{table_name}' 结构失败: {str(e)}")
