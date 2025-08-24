@@ -4,6 +4,7 @@ import asyncio
 import aiomysql
 import json
 import sqlparse
+import locale
 from sqlparse import sql, tokens as T
 from typing import List, Dict, Any, Optional
 import logging
@@ -13,6 +14,8 @@ class MySQLHandler:
     """MySQL数据库处理器，提供安全的数据库操作"""
     
     def __init__(self):
+        # 检测系统语言环境
+        self.is_chinese = self._detect_chinese_locale()
         mysql_host = os.getenv('MYSQL_HOST')
         if not mysql_host:
             raise ValueError("MYSQL_HOST环境变量未设置")
@@ -46,6 +49,29 @@ class MySQLHandler:
         ]
         
         self.logger = logging.getLogger(__name__)
+    
+    def _detect_chinese_locale(self) -> bool:
+        """检测是否为中文语言环境"""
+        try:
+            # 尝试获取系统语言环境
+            lang = locale.getdefaultlocale()[0]
+            if lang and ('zh' in lang.lower() or 'chinese' in lang.lower()):
+                return True
+            
+            # 检查环境变量
+            for env_var in ['LANG', 'LANGUAGE', 'LC_ALL', 'LC_MESSAGES']:
+                lang_env = os.getenv(env_var, '')
+                if lang_env and ('zh' in lang_env.lower() or 'chinese' in lang_env.lower()):
+                    return True
+            
+            return False
+        except Exception:
+            # 如果检测失败，默认使用英文
+            return False
+    
+    def _get_message(self, zh_msg: str, en_msg: str) -> str:
+        """根据语言环境返回对应消息"""
+        return zh_msg if self.is_chinese else en_msg
     
     async def get_connection(self) -> aiomysql.Connection:
         """获取数据库连接"""
@@ -108,7 +134,11 @@ class MySQLHandler:
         safe_commands = {'SELECT', 'SHOW', 'DESCRIBE', 'DESC', 'EXPLAIN'}
         
         if sql_keyword not in safe_commands:
-            return False, f"不允许的SQL命令: {sql_keyword}。仅允许SELECT、SHOW、DESCRIBE、EXPLAIN查询，除非在环境变量中启用危险操作。"
+            error_msg = self._get_message(
+                f"不允许的SQL命令: {sql_keyword}。仅允许SELECT、SHOW、DESCRIBE、EXPLAIN查询，除非在环境变量中启用危险操作。",
+                f"Disallowed SQL command: {sql_keyword}. Only SELECT, SHOW, DESCRIBE, EXPLAIN queries are allowed unless dangerous operations are enabled via environment variable."
+            )
+            return False, error_msg
         
         # 对SELECT语句进行深度安全检查
         if sql_keyword == 'SELECT':
@@ -145,13 +175,21 @@ class MySQLHandler:
         
         for construct, description in dangerous_constructs:
             if construct in statement_str:
-                return False, f"检测到危险的{description}操作，查询被拒绝"
+                error_msg = self._get_message(
+                    f"检测到危险的{description}操作，查询被拒绝",
+                    f"Detected dangerous {description} operation, query rejected"
+                )
+                return False, error_msg
         
         # 检查UNION操作（可能用于注入）
         if 'UNION' in statement_str:
             # 检查UNION后是否有其他表（可能是注入尝试）
             # 这里采用保守策略：所有跨表UNION都被视为潜在危险
-            return False, "检测到UNION操作，可能存在安全风险，查询被拒绝"
+            error_msg = self._get_message(
+                "检测到UNION操作，可能存在安全风险，查询被拒绝",
+                "Detected UNION operation, potential security risk, query rejected"
+            )
+            return False, error_msg
         
         # 使用AST检查嵌套的危险操作
         return self._check_nested_dangerous_operations(statement)
@@ -165,7 +203,11 @@ class MySQLHandler:
                     keyword = token.value.upper()
                     dangerous_dml = {'INSERT', 'UPDATE', 'DELETE', 'DROP', 'ALTER', 'CREATE', 'TRUNCATE'}
                     if keyword in dangerous_dml:
-                        return False, f"在SELECT语句中检测到危险的{keyword}操作"
+                        error_msg = self._get_message(
+                            f"在SELECT语句中检测到危险的{keyword}操作",
+                            f"Detected dangerous {keyword} operation in SELECT statement"
+                        )
+                        return False, error_msg
             
             # 递归检查子token
             if hasattr(token, 'tokens'):
@@ -261,9 +303,13 @@ class MySQLHandler:
                 columns = await cursor.fetchall()
                 
                 if not columns:
+                    error_msg = self._get_message(
+                        f"表 '{table_name}' 不存在或无权限访问",
+                        f"Table '{table_name}' does not exist or access denied"
+                    )
                     error_result = {
                         "status": "error",
-                        "message": f"表 '{table_name}' 不存在或无权限访问"
+                        "message": error_msg
                     }
                     return json.dumps(error_result, ensure_ascii=False)
                 
@@ -280,9 +326,13 @@ class MySQLHandler:
                         "extra": extra
                     })
                 
+                success_msg = self._get_message(
+                    f"表 '{table_name}' 包含 {len(columns)} 个字段",
+                    f"Table '{table_name}' contains {len(columns)} field(s)"
+                )
                 result = {
                     "status": "success",
-                    "message": f"表 '{table_name}' 包含 {len(columns)} 个字段",
+                    "message": success_msg,
                     "table_name": table_name,
                     "columns": column_info
                 }
@@ -302,12 +352,14 @@ class MySQLHandler:
             # 安全性检查
             is_safe, safety_msg = self.is_query_safe(query)
             if not is_safe:
-                return f"查询被拒绝: {safety_msg}"
+                rejected_msg = self._get_message("查询被拒绝", "Query rejected")
+                return f"{rejected_msg}: {safety_msg}"
             
             # 数据库上下文检查
             is_valid_context, context_msg = self.validate_database_context(query)
             if not is_valid_context:
-                return f"查询被拒绝: {context_msg}"
+                rejected_msg = self._get_message("查询被拒绝", "Query rejected")
+                return f"{rejected_msg}: {context_msg}"
             
             connection = await self.get_connection()
             async with connection.cursor() as cursor:
@@ -318,7 +370,8 @@ class MySQLHandler:
                     results = await cursor.fetchall()
                     
                     if not results:
-                        return json.dumps({"status": "success", "message": "查询执行成功，但没有返回结果", "data": []}, ensure_ascii=False)
+                        no_results_msg = self._get_message("查询执行成功，但没有返回结果", "Query executed successfully, but no results returned")
+                        return json.dumps({"status": "success", "message": no_results_msg, "data": []}, ensure_ascii=False)
                     
                     # 获取列名
                     columns = [desc[0] for desc in cursor.description] if cursor.description else []
@@ -338,9 +391,13 @@ class MySQLHandler:
                                 row_dict[col_name] = value
                         data.append(row_dict)
                     
+                    success_msg = self._get_message(
+                        f"查询执行成功，返回 {len(data)} 行结果", 
+                        f"Query executed successfully, returned {len(data)} row(s)"
+                    )
                     return json.dumps({
                         "status": "success",
-                        "message": f"查询执行成功，返回 {len(data)} 行结果",
+                        "message": success_msg,
                         "columns": columns,
                         "data": data
                     }, ensure_ascii=False)

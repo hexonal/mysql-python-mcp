@@ -3,9 +3,33 @@
 import os
 import json
 import asyncio
+import locale
 from typing import List
 from fastmcp import FastMCP
 from .mysql_handler import MySQLHandler
+
+# 检测语言环境
+def _detect_chinese_locale() -> bool:
+    """检测是否为中文语言环境"""
+    try:
+        # 尝试获取系统语言环境
+        lang = locale.getdefaultlocale()[0]
+        if lang and ('zh' in lang.lower() or 'chinese' in lang.lower()):
+            return True
+        
+        # 检查环境变量
+        for env_var in ['LANG', 'LANGUAGE', 'LC_ALL', 'LC_MESSAGES']:
+            lang_env = os.getenv(env_var, '')
+            if lang_env and ('zh' in lang_env.lower() or 'chinese' in lang_env.lower()):
+                return True
+        
+        return False
+    except Exception:
+        return False
+
+def _get_message(zh_msg: str, en_msg: str) -> str:
+    """根据语言环境返回对应消息"""
+    return zh_msg if _detect_chinese_locale() else en_msg
 
 # 创建FastMCP应用
 mcp = FastMCP("MySQL Database Server")
@@ -16,16 +40,24 @@ async def list_databases() -> str:
     handler = MySQLHandler()
     try:
         databases = await handler.list_databases()
+        message = _get_message(
+            f"找到 {len(databases)} 个数据库",
+            f"Found {len(databases)} database(s)"
+        )
         result = {
             "status": "success",
-            "message": f"找到 {len(databases)} 个数据库",
+            "message": message,
             "databases": databases
         }
         return json.dumps(result, ensure_ascii=False)
     except Exception as e:
+        message = _get_message(
+            f"获取数据库列表失败: {str(e)}",
+            f"Failed to get database list: {str(e)}"
+        )
         error_result = {
             "status": "error", 
-            "message": f"获取数据库列表失败: {str(e)}"
+            "message": message
         }
         return json.dumps(error_result, ensure_ascii=False)
 
@@ -35,16 +67,24 @@ async def list_tables() -> str:
     handler = MySQLHandler()
     try:
         tables = await handler.list_tables()
+        message = _get_message(
+            f"找到 {len(tables)} 个表",
+            f"Found {len(tables)} table(s)"
+        )
         result = {
             "status": "success",
-            "message": f"找到 {len(tables)} 个表",
+            "message": message,
             "tables": tables
         }
         return json.dumps(result, ensure_ascii=False)
     except Exception as e:
+        message = _get_message(
+            f"获取表列表失败: {str(e)}",
+            f"Failed to get table list: {str(e)}"
+        )
         error_result = {
             "status": "error",
-            "message": f"获取表列表失败: {str(e)}"
+            "message": message
         }
         return json.dumps(error_result, ensure_ascii=False)
 
@@ -60,9 +100,13 @@ async def describe_table(table_name: str) -> str:
         result = await handler.describe_table(table_name)
         return result
     except Exception as e:
+        message = _get_message(
+            f"描述表 '{table_name}' 失败: {str(e)}",
+            f"Failed to describe table '{table_name}': {str(e)}"
+        )
         error_result = {
             "status": "error",
-            "message": f"描述表 '{table_name}' 失败: {str(e)}"
+            "message": message
         }
         return json.dumps(error_result, ensure_ascii=False)
 
@@ -78,9 +122,13 @@ async def execute_query(query: str) -> str:
         result = await handler.execute_query(query)
         return result
     except Exception as e:
+        message = _get_message(
+            f"执行查询失败: {str(e)}",
+            f"Failed to execute query: {str(e)}"
+        )
         error_result = {
             "status": "error",
-            "message": f"执行查询失败: {str(e)}"
+            "message": message
         }
         return json.dumps(error_result, ensure_ascii=False)
 
