@@ -21,6 +21,11 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 
+[project.urls]
+Homepage = "https://github.com/hexonal/mysql-python-mcp"
+Repository = "https://github.com/hexonal/mysql-python-mcp.git"
+Issues = "https://github.com/hexonal/mysql-python-mcp/issues"
+
 dependencies = [
     "fastmcp>=2.0.0",
     "aiomysql>=0.2.0",
