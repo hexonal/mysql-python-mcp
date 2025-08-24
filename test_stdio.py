@@ -124,6 +124,7 @@ async def test_mcp_stdio():
         test_tools = [
             ("list_databases", {}, "列出数据库"),
             ("list_tables", {}, "列出表"),
+            ("describe_table", {"table_name": "tasks"}, "描述表结构"),
             ("execute_query", {"query": "SELECT 1 as test"}, "执行查询")
         ]
         
@@ -147,10 +148,22 @@ async def test_mcp_stdio():
                 result = response["result"]
                 if "content" in result and result["content"]:
                     content = result["content"][0].get("text", "")
-                    if len(content) > 200:
-                        content = content[:200] + "..."
+                    display_content = content[:200] + "..." if len(content) > 200 else content
                     print(f"✅ {description}成功")
-                    print(f"   结果: {content}")
+                    print(f"   结果: {display_content}")
+                    
+                    # 验证JSON格式
+                    try:
+                        import json
+                        parsed = json.loads(content)
+                        status = parsed.get('status', '未知')
+                        print(f"   📊 JSON格式: ✅ status={status}")
+                        
+                        if tool_name == "describe_table":
+                            columns = parsed.get('columns', [])
+                            print(f"      表字段数: {len(columns)}")
+                    except json.JSONDecodeError:
+                        print("   📊 JSON格式: ❌ 解析失败")
                 else:
                     print(f"❌ {description}返回空结果")
             else:
