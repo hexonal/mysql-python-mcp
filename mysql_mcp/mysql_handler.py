@@ -5,9 +5,19 @@ import aiomysql
 import json
 import sqlparse
 import locale
+from decimal import Decimal
 from sqlparse import sql, tokens as T
 from typing import List, Dict, Any, Optional
 import logging
+
+
+class DecimalEncoder(json.JSONEncoder):
+    """自定义JSON编码器，用于处理Decimal类型"""
+    def default(self, obj):
+        if isinstance(obj, Decimal):
+            # 将Decimal转换为float，如果需要保持精度可以转为string
+            return float(obj)
+        return super(DecimalEncoder, self).default(obj)
 
 
 class MySQLHandler:
@@ -311,7 +321,7 @@ class MySQLHandler:
                         "status": "error",
                         "message": error_msg
                     }
-                    return json.dumps(error_result, ensure_ascii=False)
+                    return json.dumps(error_result, ensure_ascii=False, cls=DecimalEncoder)
                 
                 # 构建结构化的JSON响应
                 column_info = []
@@ -337,7 +347,7 @@ class MySQLHandler:
                     "columns": column_info
                 }
                 
-                return json.dumps(result, ensure_ascii=False)
+                return json.dumps(result, ensure_ascii=False, cls=DecimalEncoder)
         except Exception as e:
             self.logger.error(f"描述表结构失败: {e}")
             raise Exception(f"获取表 '{table_name}' 结构失败: {str(e)}")
@@ -371,7 +381,7 @@ class MySQLHandler:
                     
                     if not results:
                         no_results_msg = self._get_message("查询执行成功，但没有返回结果", "Query executed successfully, but no results returned")
-                        return json.dumps({"status": "success", "message": no_results_msg, "data": []}, ensure_ascii=False)
+                        return json.dumps({"status": "success", "message": no_results_msg, "data": []}, ensure_ascii=False, cls=DecimalEncoder)
                     
                     # 获取列名
                     columns = [desc[0] for desc in cursor.description] if cursor.description else []
@@ -385,6 +395,9 @@ class MySQLHandler:
                             # 处理特殊类型
                             if value is None:
                                 row_dict[col_name] = None
+                            elif isinstance(value, Decimal):
+                                # 将Decimal转换为float，保持数值精度
+                                row_dict[col_name] = float(value)
                             elif hasattr(value, 'isoformat'):  # datetime对象
                                 row_dict[col_name] = value.isoformat()
                             else:
@@ -400,7 +413,7 @@ class MySQLHandler:
                         "message": success_msg,
                         "columns": columns,
                         "data": data
-                    }, ensure_ascii=False)
+                    }, ensure_ascii=False, cls=DecimalEncoder)
                 else:
                     # 对于非SELECT查询（如果允许的话）
                     affected_rows = cursor.rowcount
